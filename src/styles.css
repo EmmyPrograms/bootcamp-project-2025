@@ -82,28 +82,58 @@ main {
   color: var(--cg-orange);
   text-indent: 20px;
 }
-/*CSS for Blog*/
-.blog {
+
+/*CSS constant across these .html's*/
+.blog,
+.portfolio,
+.resume,
+.blog-page {
   width: 60%;
   margin-top: 20px;
-  background-color: var(--cg-white);
   padding: 20px, 40px, 20px, 40px;
   color: var(--cg-orange);
   text-indent: 10px;
   font-family: Geneva, Tahoma, sans-serif;
 }
+
+/*CSS for Blog*/
+
 .blog h1 {
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.blog-conent {
-  width: 60%;
-  margin-top: 20px;
-  padding: 20px, 40px, 20px, 40px;
-  color: var(--cg-orange);
+#blog-conent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-indent: 10px;
+}
+.blog-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.blog-post a,
+.blog-page a {
+  color: var(--cg-orange);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/*CSS for blog - pages*/
+.blog-page {
+  margin-left: 20px;
+  padding: 400px, 20px, 20px, 40px;
   font-family: Geneva, Tahoma, sans-serif;
+  text-indent: 20px;
+}
+.blog-page h1 {
+  background-color: var(--cg-cyan);
+  color: var(--cg-white);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.blog-page p {
+  background-color: var(--cg-white);
 }
 
 /*CSS for Portfolio*/
@@ -112,8 +142,6 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--cg-orange);
-  font-family: Geneva, Tahoma, sans-serif;
 }
 .portfolio h1,
 .portfolio h3,
@@ -142,12 +170,7 @@ main {
 /*CSS for resume*/
 
 .resume {
-  width: 60%;
-  margin-top: 20px;
   background-color: var(--cg-white);
-  padding: 20px, 40px, 20px, 40px;
-  color: var(--cg-orange);
-  text-indent: 10px;
 }
 
 .resume h1 {
