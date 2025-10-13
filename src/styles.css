@@ -97,6 +97,15 @@ main {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.blog-conent {
+  width: 60%;
+  margin-top: 20px;
+  padding: 20px, 40px, 20px, 40px;
+  color: var(--cg-orange);
+  text-indent: 10px;
+  font-family: Geneva, Tahoma, sans-serif;
+}
+
 /*CSS for Portfolio*/
 .portfolio {
   display: flex;
