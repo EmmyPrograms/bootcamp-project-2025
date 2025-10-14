@@ -19,7 +19,8 @@ const Blogs: Blog[] = [
   {
     title: "Technology Innovation Course",
     date: "1/16/2022-5/24/2022",
-    description: "A technology driven course offered to juniors and seniors at Roseville Highschool, CA",
+    description:
+      "A technology driven course offered to juniors and seniors at Roseville Highschool, CA",
     image: "./images/Technology.jpg",
     imageAlt: "Technology Innovations Presentation",
     slug: "technology",
