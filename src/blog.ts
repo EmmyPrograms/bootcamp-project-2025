@@ -17,12 +17,12 @@ const Blogs: Blog[] = [
     slug: "jumpstart",
   },
   {
-    title: "Second Blog Post",
-    date: "XX/XX/XXXX",
-    description: "N/A",
-    image: "N/A",
-    imageAlt: "N/A",
-    slug: "slug",
+    title: "Technology Innovation Course",
+    date: "1/16/2022-5/24/2022",
+    description: "A technology driven course offered to juniors and seniors at Roseville Highschool, CA",
+    image: "./images/Technology.jpg",
+    imageAlt: "Technology Innovations Presentation",
+    slug: "technology",
   },
 ];
 
@@ -34,7 +34,7 @@ Blogs.forEach((blog) => {
   const image = document.createElement("img");
   image.src = blog.image;
   image.alt = blog.imageAlt;
-  image.width = 650;
+  image.width = 550;
   image.height = 300;
   const h2 = document.createElement("h2");
   const a = document.createElement("a");
