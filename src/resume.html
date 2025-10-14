@@ -1,7 +1,17 @@
+<!-- 
+ Displays Resume; consistent of Experience, Skills, Education, Work, and Hobbies
+ @author Amelia Harris
+ -->
+
 <!DOCTYPE html>
 <html>
   <head>
     <title>Resume</title>
+    <!--Normalizes css so no outside css interference-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -21,10 +31,11 @@
           <h1>Resume</h1>
         </div>
         <div class="resume-content">
+          <!-- Experience -->
           <section class="section">
             <h3>Experience</h3>
             <div class="entry">
-              <ul class="skills-list">
+              <ul id="projects">
                 <li>
                   <u
                     ><i
@@ -69,10 +80,11 @@
               </ul>
             </div>
           </section>
+          <!-- Skills -->
           <section class="section">
             <h3>Skills</h3>
             <div class="entry">
-              <ul class="skills-list">
+              <ul id="skills-list">
                 <li>
                   <b><u>Languages: </u></b>C++, Java, JavaScript, Html, CSS,ARM,
                   Python, LaTeX
@@ -90,10 +102,11 @@
               </ul>
             </div>
           </section>
+          <!-- Education -->
           <section class="section">
             <h3>Education</h3>
             <div class="entry">
-              <ul class="schools">
+              <ul id="education">
                 <li>
                   <b
                     ><u
@@ -133,6 +146,7 @@
               </ul>
             </div>
           </section>
+          <!-- Work -->
           <section class="section">
             <h3>Work</h3>
             <div class="entry">
@@ -140,22 +154,29 @@
                 <li>
                   <b
                     ><u
-                      >Tutor/Pass Peer </b>| Sierra College, Rocklin, CA | <i>(January 2022-July 2025)</i>
-                    </u>
+                      >Tutor/Pass Peer | Sierra College, Rocklin, CA |
+                      <i>(January 2022-July 2025)</i></u
+                    ></b
+                  >
                   <ul>
                     <li>
-                      <i><u>Pass Peer: </u></i>Class specific tutoring program at Sierra College designed to assist students succeed in classes.
-                      Professors either request or approve tutors to Pass Peer their classes. I tutored for Differential Equations,
-                      Linear Algebra, Principle of Physics: Mechanics, and Principle of Physics: Heat/Waves/ Modern Physics.
+                      <i><u>Pass Peer: </u></i>Class specific tutoring program
+                      at Sierra College designed to assist students succeed in
+                      classes. Professors either request or approve tutors to
+                      Pass Peer their classes. I tutored for Differential
+                      Equations, Linear Algebra, Principle of Physics:
+                      Mechanics, and Principle of Physics: Heat/Waves/ Modern
+                      Physics.
                     </li>
                   </ul>
                 </li>
               </ul>
             </div>
           </section>
+          <!-- Hobbies -->
           <section class="section">
             <h3>Hobbies</h3>
-            <div class="entry">
+            <div id="entry">
               <ul>
                 <li>
                   Outside of class, I enjoy thrifting, experimenting with

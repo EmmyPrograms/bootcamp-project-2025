@@ -1,5 +1,4 @@
 :root {
-  /* variables */
   --cg-cyan: rgb(120, 220, 231);
   --cg-orange: rgb(236, 191, 113);
   --cg-beige: rgb(238, 233, 219);
@@ -29,7 +28,7 @@ main {
   align-items: center;
 }
 
-/* CSS for navigation bar */
+/*NavBar*/
 
 .navbar {
   position: -webkit-sticky;
@@ -47,12 +46,9 @@ main {
   background-color: var(--cg-cyan);
   color: var(--cg-white);
   padding: 0px 0px;
-
-  /* Debug border */
-  /* border: solid red; */
 }
 
-/*CSS for Nav*/
+/*Nav*/
 .nav-list {
   display: flex;
   flex-direction: row;
@@ -73,7 +69,7 @@ main {
   color: var(--cg-orange);
 }
 
-/*CSS for index (home) */
+/*Index/Home*/
 
 .about-text {
   width: 60%;
@@ -86,7 +82,7 @@ main {
   text-indent: 20px;
 }
 
-/*CSS constant across these .html's*/
+/*Shared Styling*/
 .blog,
 .portfolio,
 .resume,
@@ -99,14 +95,14 @@ main {
   font-family: Geneva, Tahoma, sans-serif;
 }
 
-/*CSS for Blog*/
+/*Blog*/
 
 .blog h1 {
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#blog-conent {
+#blog-content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -129,7 +125,7 @@ main {
 .blog-post a:hover {
   text-decoration: underline;
 }
-/*CSS for blog - pages*/
+/*Blog - pages*/
 .blog-page {
   margin-left: 20px;
   padding: 40px 20px;
@@ -147,7 +143,7 @@ main {
   padding: 10px;
 }
 
-/*CSS for Portfolio*/
+/*Portfolio*/
 .portfolio {
   display: flex;
   flex-direction: column;
@@ -174,13 +170,7 @@ main {
   max-width: 650px;
 }
 
-.portfolio ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/*CSS for resume*/
+/*Resume*/
 
 .resume {
   background-color: var(--cg-white);
@@ -203,7 +193,7 @@ main {
   line-height: 1.5;
 }
 
-/*CSS for Contact*/
+/*Contact*/
 
 .contact {
   color: var(--cg-orange);
@@ -213,7 +203,7 @@ main {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* CSS for page footer */
+/*Footer */
 
 .footer {
   display: flex;

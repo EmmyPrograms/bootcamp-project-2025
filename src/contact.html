@@ -1,7 +1,17 @@
+<!-- 
+ Allocates an area for contact submission. Also shares contact information.
+ @author Amelia Harris
+ -->
+
 <!DOCTYPE html>
 <html>
   <head>
     <title>Contact</title>
+    <!--Normalizes css so no outside css interference-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -16,22 +26,21 @@
       </ul>
     </nav>
     <main>
-        <div class = "contact">
-              <h1>Contact</h1>
-              <form class = "contact-form">
-                <label for = "text" > Name: </label>
-                <input type = "text" id = "email"></input>
-                <label for = "email" > Email: </label>
-                <input type = "email" id = "name"></input>
-                <label for = "message" > Message: </label>
-                <textarea id = "message">Your Message</textarea>
-                <input type = "submit" id = "submit-button"></input>
-              </form>
-              <p>Phone: (916)218-0827</p>
-              <p>Email: ameliaharris492@gmail.com</p>
-            </div>
-        </div>
+      <div class="contact">
+        <h1><i>Feel free to contact!</i></h1>
+        <form class="contact-form">
+          <label for="text"> Name: </label>
+          <input type="text" id="email" />
+          <label for="email"> Email: </label>
+          <input type="email" id="name" />
+          <label for="message"> Message: </label>
+          <textarea id="message">Your Message</textarea>
+          <input type="submit" id="submit-button" />
+        </form>
+        <p>Phone: (916)218-0827</p>
+        <p>Email: ameliaharris492@gmail.com</p>
+      </div>
     </main>
-    <footer class = "footer">© 2025 Amelia Harris | All Rights Reserved</footer>
+    <footer class="footer">© 2025 Amelia Harris | All Rights Reserved</footer>
   </body>
 </html>

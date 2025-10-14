@@ -1,3 +1,8 @@
+/*
+ Automatically generates blog content based on Blog array elements in the blogs.html's "blog-content" div. 
+ @author Amelia Harris
+*/
+
 type Blog = {
   title: string;
   date: string;

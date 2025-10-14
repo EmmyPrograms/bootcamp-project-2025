@@ -1,7 +1,17 @@
+<!-- 
+ Displays Portfolio; consistent of two projects : personal blog and bikejog
+ @author Amelia Harris
+ -->
+
 <!DOCTYPE html>
 <html>
   <head>
     <title>Portfolio</title>
+    <!--Normalizes css so no outside css interference-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -21,29 +31,40 @@
           <h1>Portfolio</h1>
         </div>
         <div class="portfolio-details">
-          <ul>
-            <li>
-              <div class = "project">
-                <a href = "index.html">
-                <img src = "./images/Personal Website.png" alt = "Personal Website" width = "650pt", height = "300pt" />
-                </a>
-                <div class = "project-description">
-                <h3> Personal Webstie</h3>
-                <p> A personal website containing my resume, portfolio, contact, and about page </p>
-              </div>
-            </li>
-            <li>
-              <div class = "project">  
-                <img src = "./images/BikeJog.jpg" alt = "BikeJog Mobile Application" width = "175pt", height = "300pt" />
-                <div class = "project-description"></div>
-                  <h3> BikeJog Mobile Application</h3>
-                  <p>
-                    An excersice based mobile application that would allow users to track 
-                    routes that were biked or jogged and view stats based off routes
-                  </p>
-                </div>
-            </li>
-          </ul>
+          <div class="project">
+            <a href="index.html">
+              <img
+                src="./images/Personal Website.png"
+                alt="Personal Website"
+                width="650pt"
+                ,
+                height="300pt"
+              />
+            </a>
+            <div class="project-description">
+              <h3>Personal Website</h3>
+              <p>
+                A personal website containing my resume, portfolio, contact, and
+                about page
+              </p>
+            </div>
+          </div>
+          <div class="project">
+            <img
+              src="./images/BikeJog.jpg"
+              alt="BikeJog Mobile Application"
+              width="175pt"
+              ,
+              height="300pt"
+            />
+            <div class="project-description">
+              <h3>BikeJog Mobile Application</h3>
+              <p>
+                An excersice based mobile application that would allow users to
+                track routes that were biked or jogged and view stats based off
+                routes
+              </p>
+            </div>
           </div>
         </div>
       </div>
