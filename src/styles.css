@@ -6,16 +6,19 @@
   --cg-white: rgb(255, 255, 255);
 }
 
-html {
+html,
+body {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   background-color: var(--cg-beige);
   position: relative;
   min-height: 100vh;
-  padding: 0;
-  margin: 0;
+  flex-direction: column;
+  display: flex;
 }
 
 main {
@@ -42,7 +45,7 @@ main {
   text-align: center;
 
   background-color: var(--cg-cyan);
-  color: white;
+  color: var(--cg-white);
   padding: 0px 0px;
 
   /* Debug border */
@@ -77,7 +80,7 @@ main {
   margin-top: 20px;
   margin-left: 20px;
   background-color: var(--cg-white);
-  padding: 400px, 20px, 20px, 40px;
+  padding: 40px, 20px;
   font-family: Geneva, Tahoma, sans-serif;
   color: var(--cg-orange);
   text-indent: 20px;
@@ -90,7 +93,7 @@ main {
 .blog-page {
   width: 60%;
   margin-top: 20px;
-  padding: 20px, 40px, 20px, 40px;
+  padding: 20px, 40px;
   color: var(--cg-orange);
   text-indent: 10px;
   font-family: Geneva, Tahoma, sans-serif;
@@ -114,26 +117,34 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 2rem;
 }
 .blog-post a,
 .blog-page a {
   color: var(--cg-orange);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-decoration: none;
+}
+
+.blog-post a:hover {
+  text-decoration: underline;
 }
 /*CSS for blog - pages*/
 .blog-page {
   margin-left: 20px;
-  padding: 400px, 20px, 20px, 40px;
-  font-family: Geneva, Tahoma, sans-serif;
+  padding: 40px 20px;
   text-indent: 20px;
 }
 .blog-page h1 {
   background-color: var(--cg-cyan);
   color: var(--cg-white);
+  padding: 10px;
+  text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .blog-page p {
   background-color: var(--cg-white);
+  padding: 10px;
 }
 
 /*CSS for Portfolio*/
@@ -143,12 +154,10 @@ main {
   align-items: center;
   justify-content: center;
 }
-.portfolio h1,
-.portfolio h3,
-.portfolio p,
-.portfolio ul {
-  margin: 0;
-  padding: 0;
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .portfolio h1 {
   text-align: center;
@@ -160,13 +169,17 @@ main {
   align-items: center;
   margin-bottom: 2rem;
 }
-.portfolio ul {
-  list-style: none;
-}
 .project-description {
   text-align: center;
   max-width: 650px;
 }
+
+.portfolio ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 /*CSS for resume*/
 
 .resume {
@@ -207,9 +220,7 @@ main {
   justify-content: center;
   align-items: center;
   background-color: var(--cg-beige);
-  color: white;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  color: var(--cg-white);
   height: 2.5rem;
+  width: 100%;
 }
