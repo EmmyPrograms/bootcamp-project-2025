@@ -1,33 +1,22 @@
-<!-- 
+/* 
  Blog entry for the Technology Innovation Course. 
  @author Amelia Harris
- -->
-<!DOCTYPE html>
-<hmtl>
-  <head>
-    <title>Technology Innovation</title>
-    <!--Normalizes css so no outside css interference-->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../styles.css" />
-  </head>
-  <body>
-    <main>
-      <div class="blog-page">
-        <div class="blog-page-content">
-          <h1>Technology Innovation</h1>
-          <h2><i>1/16/2022 - 5/24/2022</i></h2>
-          <img
-            src="../images/TechnologyGroup.jpeg"
-            alt="Technology Innovation Group"
-            width="450pt"
-            ,
-            height="300pt"
-          />
-          <p>
-            For my Senior Year of highschool, I participated in the Technology
+ @version 2.0
+*/
+
+import BlogPage from "@/components/blog";
+
+export default function BikeJogPage() {
+  return (
+    <div className=" flex flex-col items-center">
+      <title>BikeJog</title>
+      <h1>
+        <u>BikeJpg Mobile Application</u>
+      </h1>
+      <div id="blog-content" className="gap-8 px-6 py-12 text-secondary">
+        <BlogPage
+            title={"BikeJog"}
+            description={`For my Senior Year of highschool, I participated in the Technology
             Innovations Course. The goal of this course was to introduce current
             software development standards and to create a space for techonolgy
             innovation. Five different groups were formed to work on various
@@ -41,12 +30,16 @@
             Additionally, I took charge in resolving any github merging
             conflicts or issues in the repo. Overall, I learned a lot about the
             software development process, programming in a group, and discovered
-            my love for fullstack development.
-          </p>
-          <a href="../blog.html">Back to all blogs</a>
-        </div>
+            my love for fullstack development.`}
+            image={"/TechnologyGroup.jpeg"}
+            date={"(1/16/2022 - 5/24/2022)"}
+            imageAlt={"Technology Group"}
+            slug = {"N/A"}
+          />
       </div>
-    </main>
-    <footer class="footer">© 2025 Amelia Harris | All Rights Reserved</footer>
-  </body>
-</hmtl>
+      <footer className="footer">
+        © 2025 Amelia Harris | All Rights Reserved
+      </footer>
+    </div>
+  );
+}
