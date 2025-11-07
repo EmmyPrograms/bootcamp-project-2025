@@ -1,4 +1,5 @@
-/bootcamp-milestone-2-backup/node_modules
+/bootcamp-milestone-3/node_modules
+/bootcamp-milestone-2-backup
 /BootCamp_Milestone_1
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
@@ -16,11 +17,11 @@
 /coverage
 
 # next.js
-/bootcamp-milestone-2-backup/.next/
+/bootcamp-milestone-3/.next/
 /out/
 
 # production
-/bootcamp-milestone-2-backup/build
+/bootcamp-milestone-3/build
 
 # misc
 .DS_Store

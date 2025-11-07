@@ -1,0 +1,53 @@
+
+@import "tailwindcss";
+
+body {
+  background-color: #f5ebd3;
+}
+@theme {
+  --color-primary: rgb(120, 220, 231);
+  --color-secondary: #f2b968;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New";
+}
+@keyframes floatUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-floatUp {
+  animation: floatUp 1s ease-out forwards;
+}
+
+
+@layer base {
+  h1 {
+    @apply text-primary font-bold text-5xl;
+  }
+  h3 {
+    @apply font-bold text-xl leading-normal text-secondary;
+  }
+}
+@layer components {
+
+  .footer {
+    @apply text-sm font-normal leading-relaxed text-secondary fixed bottom-0 left-1/2 transform -translate-x-1/2;
+  }
+  .input {
+    @apply focus:border-primary focus:ring-2 focus:ring-primary rounded-lg p-2 outline-none;
+  }
+  .panel {
+    @apply bg-white rounded-2xl text-secondary p-6 max-w-2xl ml-12 shadow-lg;
+    top: 12rem; /* if you need specific top/right positioning */
+    right: 10rem;
+    font-family: var(--font-mono); /* use a CSS variable or font-family directly */
+    animation: floatUp 1s ease-out forwards; /* animate separately */
+}
+}
+
