@@ -38,7 +38,7 @@ export default async function BlogPage() {
               title={blog.title}
               description={blog.description}
               image={blog.image}
-              date={blog.date}
+              date={blog.date.toLocaleDateString()}
               imageAlt={blog.imageAlt}
               slug={blog.slug}
             />

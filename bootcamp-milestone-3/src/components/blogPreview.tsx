@@ -18,7 +18,7 @@ export default function BlogPreview(props: Blog) {
       <Link href={`/${props.slug}`} className="hover:secondary/60 transition-colors duration-200">
         <Image
           src={props.image}
-          alt={props.imageAlt}
+          alt={props.imageAlt || "Blog Image"}
           width={500}
           height={500}
           className="rounded-3xl animate-floatUp shadow-lg left-0"
