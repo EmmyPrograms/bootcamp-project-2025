@@ -1,7 +1,7 @@
 /*
     based on passed in props, generates a blog component for a blog page
     @author Amelia Harris
-    @version 1.0
+    @version 1.1
 */
 
 import React from "react";

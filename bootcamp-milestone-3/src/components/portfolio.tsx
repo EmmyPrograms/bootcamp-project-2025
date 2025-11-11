@@ -1,7 +1,7 @@
 /*
     based on portfolio data, generates a portfolio project component
     @author Amelia Harris
-    @version 1.0
+    @version 1.1
 */
 
 import React from "react";
@@ -16,7 +16,7 @@ export default function PortfolioPreview(props: PersonalProject) {
       </h3>
       <Image
         src={props.image}
-        alt={props.imageAlt}
+        alt={props.imageAlt || "Portfolio Image"}
         width={300}
         height={300}
         className="rounded-3xl animate-floatUp shadow-lg left-0 "
