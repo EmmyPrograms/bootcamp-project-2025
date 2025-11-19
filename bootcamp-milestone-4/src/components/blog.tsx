@@ -8,6 +8,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {Blog} from "@/database/blogSchema";
+import Comment from "@/components/comment";
+import {IComment} from "@/database/blogSchema";
 
 
 
@@ -30,6 +32,13 @@ export default function BlogPage(props: Blog) {
           <i>{dateLabel}</i>
         </p>
       </div>
+      <div className="rounded-3xl animate-floatUp shadow-lg left-0 panel">
+        <h3 className="text-xl font-medium leading-normal"> Comments: </h3>
+        {props.comments.map((comment: IComment, index: number) => (
+        <Comment key={index} comment={comment} />
+      ))}
+      </div>
+      
       <Link
         href="/blog"
         className="text-sm font-medium leading-relaxed text-secondary flex flex-col items-center "

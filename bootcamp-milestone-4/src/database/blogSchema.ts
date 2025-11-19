@@ -6,6 +6,12 @@
 
 import mongoose, { Schema } from "mongoose";
 
+export interface IComment {
+		user: string;
+		comment: string;
+		time: Date;
+}
+
 export interface Blog{
   title: string;
   date: Date;
@@ -14,7 +20,7 @@ export interface Blog{
   imageAlt: string;
   slug: string;
   content: string;
-  //comments: IComment[]; // array for comments
+  comments: IComment[]; // array for comments
 };
 
 const blogSchema = new Schema<Blog>({

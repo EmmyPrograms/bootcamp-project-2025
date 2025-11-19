@@ -1,6 +1,7 @@
 import connectDB from "@/database/db";
 import BlogPage from "@/components/blog";
 
+
 type Props = {
   params: Promise<{ slug: string }>;
 };
@@ -49,8 +50,10 @@ export default async function Blog({ params }: Props) {
           imageAlt={blog.imageAlt}
           slug={slug}
           content={blog.content}
+          comments={blog.comments}
         />
       </div>
+      
       <footer className="footer">
         © 2025 Amelia Harris | All Rights Reserved
       </footer>

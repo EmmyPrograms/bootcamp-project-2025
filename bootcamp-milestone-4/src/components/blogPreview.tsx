@@ -9,6 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {Blog} from "@/database/blogSchema";
 
+
 export default function BlogPreview(props: Blog) {
 
   return (
