@@ -35,6 +35,7 @@ export default async function BlogPage() {
               title={blog.title}
               description={blog.description}
               image={blog.image}
+              imageSecondary= {blog.imageSecondary}
               date={blog.date}
               imageAlt={blog.imageAlt}
               slug={blog.slug}

@@ -19,7 +19,7 @@ export default function BlogPage(props: Blog) {
   return (
     <div>
       <Image
-        src={props.image}
+        src={props.imageSecondary}
         alt={props.imageAlt}
         width={500}
         height={500}
@@ -32,7 +32,7 @@ export default function BlogPage(props: Blog) {
           <i>{dateLabel}</i>
         </p>
       </div>
-      <div className="rounded-3xl animate-floatUp shadow-lg left-0 panel">
+      <div className="left-0 panel">
         <h3 className="text-xl font-medium leading-normal"> Comments: </h3>
         {props.comments.map((comment: IComment, index: number) => (
         <Comment key={index} comment={comment} />

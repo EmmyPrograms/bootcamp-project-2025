@@ -45,7 +45,8 @@ export default async function Blog({ params }: Props) {
         <BlogPage
           title={blog.title}
           description={blog.content}
-          image={blog.image}
+          image={blog.imageSecondary}
+          imageSecondary= {blog.imageSecondary}
           date={blog.date}
           imageAlt={blog.imageAlt}
           slug={slug}
