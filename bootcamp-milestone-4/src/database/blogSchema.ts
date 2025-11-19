@@ -6,7 +6,7 @@
 
 import mongoose, { Schema } from "mongoose";
 
-export interface IBlog{
+export interface Blog{
   title: string;
   date: Date;
   description: string;
@@ -17,7 +17,7 @@ export interface IBlog{
   //comments: IComment[]; // array for comments
 };
 
-const blogSchema = new Schema<IBlog>({
+const blogSchema = new Schema<Blog>({
   title: { type: String, required: true },
   date: { type: Date, required: false, default: new Date() },
   description: { type: String, required: true },

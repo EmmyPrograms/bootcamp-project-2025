@@ -7,11 +7,11 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {IBlog} from "@/database/blogSchema";
+import {Blog} from "@/database/blogSchema";
 
 
 
-export default function BlogPage(props: IBlog) {
+export default function BlogPage(props: Blog) {
   const d = props.date instanceof Date ? props.date : new Date(props.date);
   const dateLabel = isNaN(d.getTime()) ? "" : d.toDateString();
   return (

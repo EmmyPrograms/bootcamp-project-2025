@@ -7,9 +7,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {IBlog} from "@/database/blogSchema";
+import {Blog} from "@/database/blogSchema";
 
-export default function BlogPreview(props: IBlog) {
+export default function BlogPreview(props: Blog) {
 
   return (
     <div>
