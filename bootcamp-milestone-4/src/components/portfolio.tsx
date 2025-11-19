@@ -6,9 +6,9 @@
 
 import React from "react";
 import Image from "next/image";
-import { PersonalProject } from "@/app/portfolioData";
+import  Portfolio  from "@/database/portfolioSchema";
 
-export default function PortfolioPreview(props: PersonalProject) {
+export default function PortfolioPreview(props: Portfolio) {
   return (
     <div className="flex flex-col items-center gap-4">
       <h3>

@@ -7,9 +7,13 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Blog } from "@/app/blogData";
+import {IBlog} from "@/database/blogSchema";
 
-export default function BlogPage(props: Blog) {
+
+
+export default function BlogPage(props: IBlog) {
+  const d = props.date instanceof Date ? props.date : new Date(props.date);
+  const dateLabel = isNaN(d.getTime()) ? "" : d.toDateString();
   return (
     <div>
       <Image
@@ -21,9 +25,9 @@ export default function BlogPage(props: Blog) {
       ></Image>
       <div className="panel transform -translate-y-12">
         <h3 className="text-xl font-medium leading-normal"> {props.title} </h3>
-        <p>{props.description}</p>
+        <p>{props.content}</p>
         <p>
-          <i>{props.date}</i>
+          <i>{dateLabel}</i>
         </p>
       </div>
       <Link

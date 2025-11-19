@@ -10,14 +10,14 @@ type Portfolio = {
   title: string;
   description: string;
   image: string;
-  image_alt: string;
+  imageAlt: string;
 };
 
 const portfolioSchema = new Schema<Portfolio>({
   title: { type: String, required: true },
   description: { type: String, required: true },
   image: { type: String, required: true },
-  image_alt: { type: String, required: true },
+  imageAlt: { type: String, required: true },
 });
 const Portfolio =
   mongoose.models["projects"] || mongoose.model("projects", portfolioSchema);
