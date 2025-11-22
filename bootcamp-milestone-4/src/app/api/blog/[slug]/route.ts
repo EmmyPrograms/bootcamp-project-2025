@@ -1,3 +1,8 @@
+/*
+    Dynamic routing via API set up for blog pages
+    @author Amelia Harris
+    @version 2.1
+*/
 
 import { NextRequest, NextResponse } from 'next/server'
 import connectDB from "@/database/db"

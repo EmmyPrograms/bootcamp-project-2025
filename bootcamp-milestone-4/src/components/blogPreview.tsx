@@ -1,7 +1,7 @@
 /*
     based on Blog data, generates a blog section component in the blog page
     @author Amelia Harris
-    @version 2.0
+    @version 2.1
 */
 
 import React from "react";

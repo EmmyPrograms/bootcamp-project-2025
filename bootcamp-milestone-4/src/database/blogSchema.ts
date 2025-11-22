@@ -1,7 +1,7 @@
 /*
  Establishes blog schema for blog page (and later dynamic api)
  @author Amelia Harris
- @version 1.0
+ @version 1.1
 */
 
 import mongoose, { Schema } from "mongoose";

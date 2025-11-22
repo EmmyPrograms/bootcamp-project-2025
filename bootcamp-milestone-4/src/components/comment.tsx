@@ -1,17 +1,18 @@
 
+/*
+    based on blog comments data, generates a comment section in the blog component
+    @author Amelia Harris
+    @version 1.0
+*/
 
 import {IComment} from "@/database/blogSchema";
-{/* When we pass props, the name that we use to pass values
-		is the key for the type
-*/}
+
 interface CommentProps  {
     comment: IComment;
 }
 
 
-{/* Modularizing code into seperate functions is useful.
-		Makes your code look nicer and allows for better readability.
-	*/}
+
 function parseCommentTime(time: Date){
 	return time.toDateString();
 }

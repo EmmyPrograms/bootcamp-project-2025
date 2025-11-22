@@ -1,7 +1,7 @@
 /*
- Displays a list of blogs. 
+ Displays a list of blogs.
  @author Amelia Harris
- @version 3.0
+ @version 3.1
 */
 
 import BlogPreview from "@/components/blogPreview";

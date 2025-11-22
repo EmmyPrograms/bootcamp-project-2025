@@ -1,3 +1,11 @@
+/*
+    Dynamic routing page that will automatically generate a blog page via api
+    @author Amelia Harris
+    @version 2.1
+*/
+
+
+
 import connectDB from "@/database/db";
 import BlogPage from "@/components/blog";
 
