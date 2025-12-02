@@ -1,4 +1,5 @@
-/bootcamp-milestone-4/node_modules
+/bootcamp-milestone-final/node_modules
+/bootcamp-milestone-4
 /bootcamp-milestone-3
 /bootcamp-milestone-2-backup
 /BootCamp_Milestone_1
@@ -18,11 +19,11 @@
 /coverage
 
 # next.js
-/bootcamp-milestone-4/.next/
+/bootcamp-milestone-final/.next/
 /out/
 
 # production
-/bootcamp-milestone-4/build
+/bootcamp-milestone-final/build
 
 # misc
 .DS_Store
