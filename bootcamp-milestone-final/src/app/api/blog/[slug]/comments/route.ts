@@ -10,15 +10,9 @@ export async function POST(req: NextRequest, { params }: IParams) {
   const { slug } = await params;
   await connectDB();
   const body = await req.json();
-  if (!body) {
+  if (!body || !body.user || !body.comment) {
     return NextResponse.json(
       { error: "Invalid comment data" },
-      { status: 400 }
-    );
-  }
-  if (!body.user || !body.comment) {
-    return NextResponse.json(
-      { error: "Missing user or comment" },
       { status: 400 }
     );
   }
