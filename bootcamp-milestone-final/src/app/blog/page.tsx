@@ -9,7 +9,7 @@ import connectDB from "@/database/db";
 import Blog from "@/database/blogSchema";
 
 async function getBlogs(){
-	await connectDB() 
+	await connectDB()
 
 	try {
 	    const blogs = await Blog.find().sort({ date: -1 }).orFail()

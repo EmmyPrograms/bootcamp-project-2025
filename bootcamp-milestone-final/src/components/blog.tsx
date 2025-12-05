@@ -3,12 +3,12 @@
     @author Amelia Harris
     @version 1.2
 */
-
+'use client';
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {Blog} from "@/database/blogSchema";
-import Comment from "@/components/comment";
+import CommentSection from "@/components/commentSection";
 import {IComment} from "@/database/blogSchema";
 
 
@@ -16,6 +16,9 @@ import {IComment} from "@/database/blogSchema";
 export default function BlogPage(props: Blog) {
   const d = props.date instanceof Date ? props.date : new Date(props.date);
   const dateLabel = isNaN(d.getTime()) ? "" : d.toDateString();
+
+  
+
   return (
     <div>
       <Image
@@ -32,11 +35,8 @@ export default function BlogPage(props: Blog) {
           <i>{dateLabel}</i>
         </p>
       </div>
-      <div className="left-0 panel">
-        <h3 className="text-xl font-medium leading-normal"> Comments: </h3>
-        {props.comments.map((comment: IComment, index: number) => (
-        <Comment key={index} comment={comment} />
-      ))}
+      <div>
+        <CommentSection comments={props.comments as IComment[]} slug={props.slug} />
       </div>
       
       <Link
