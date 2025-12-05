@@ -5,17 +5,18 @@ import { IComment } from "@/database/blogSchema";
 import Comment from "@/components/comment";
 
 interface CommentSectionProps {
-  comments: IComment[]; // initial comments from the server
-  slug: string;         // blog slug for POST URL
+  comments: IComment[];
+  slug: string;         
 }
 
 export default function CommentSection({
   comments: initialComments,
   slug,
 }: CommentSectionProps) {
-  const [showForm, setShowForm] = React.useState(false);
-  const [comments, setComments] = React.useState<IComment[]>(initialComments ?? []);
 
+  const [showForm, setShowForm] = React.useState(false);
+  //no need to constantly reload comments from server, so we manage them here
+  const [comments, setComments] = React.useState<IComment[]>(initialComments ?? []);
   const [newComment, setNewComment] = React.useState<IComment>({
     user: "Anonymous",
     comment: "",
@@ -34,7 +35,6 @@ export default function CommentSection({
       comment: newComment.comment,
     };
 
-    // POST to your existing comments API
     const res = await fetch(`/api/blog/${slug}/comments`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -46,13 +46,10 @@ export default function CommentSection({
       return;
     }
 
-    // We set the route to return the new comment object
     const created: IComment = await res.json();
 
-    // Add it to the local list
     setComments((prev) => [...prev, created]);
 
-    // Clear only the text, keep user (or reset user if you prefer)
     setNewComment((prev) => ({
       ...prev,
       comment: "",

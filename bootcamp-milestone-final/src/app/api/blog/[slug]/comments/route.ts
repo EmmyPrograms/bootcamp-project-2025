@@ -7,29 +7,45 @@ type IParams = {
 };
 
 export async function POST(req: NextRequest, { params }: IParams) {
-  const { slug } = await params;
-  await connectDB();
-  const body = await req.json();
-  if (!body || !body.user || !body.comment) {
+  try {
+    const { slug } = await params;
+
+    await connectDB();
+
+    const body = await req.json();
+    if (!body || !body.user || !body.comment) {
+      return NextResponse.json(
+        { error: "Invalid comment data" },
+        { status: 400 }
+      );
+    }
+
+    const newComment = {
+      user: body.user,
+      comment: body.comment,
+      time: new Date(),
+    };
+
+    const updatedBlog = await Blog.findOneAndUpdate(
+      { slug: slug },
+      { $push: { comments: newComment } },
+      { new: true }
+    );
+    if (!updatedBlog) {
+      return NextResponse.json({ error: "Blog not found" }, { status: 404 });
+    }
+    console.log(
+      updatedBlog._id.toString()
+    );
+    console.log(
+
+      updatedBlog.comments?.length
+    );
+    return NextResponse.json(newComment, { status: 201 });
+  } catch (err) {
     return NextResponse.json(
-      { error: "Invalid comment data" },
-      { status: 400 }
+      { error: "Internal server error" },
+      { status: 500 }
     );
   }
-
-  const newComment = {
-    user: body.user,
-    comment: body.comment,
-    time: new Date(),
-  };
-
-  const updatedBlog = await Blog.findOneAndUpdate(
-    { slug },
-    { $push: { comments: newComment } },
-    { new: true }
-  );
-  if (!updatedBlog) {
-    return NextResponse.json({ error: "Blog not found" }, { status: 404 });
-  }
-  return NextResponse.json(newComment);
 }
