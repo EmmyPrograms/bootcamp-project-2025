@@ -6,7 +6,7 @@ import Comment from "@/components/comment";
 
 interface CommentSectionProps {
   comments: IComment[];
-  slug: string;         
+  slug: string;
 }
 
 export default function CommentSection({
@@ -79,7 +79,7 @@ export default function CommentSection({
 
       {showForm && (
         <form onSubmit={handleSubmit} className="mt-4 flex flex-col gap-3">
-          <textarea
+          <input
             className="border rounded p-2 w-full"
             placeholder="Type your name (or leave blank for Anonymous)"
             value={newComment.user}

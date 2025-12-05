@@ -1,11 +1,53 @@
+"use client";
+import React from "react";
+import emailjs from "@emailjs/browser";
+
+
+const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
+
+
 export default function ContactPage() {
+  const formRef = React.useRef<HTMLFormElement | null>(null);
+  const [isSending, setIsSending] = React.useState(false);
+  const [status, setStatus] = React.useState<null | "success" | "error">(null);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>){
+    e.preventDefault();
+
+    setIsSending(true);
+    setStatus(null);
+
+    if(!formRef.current){
+      setIsSending(false);
+      setStatus("error");
+      return;
+    }
+
+    try {
+      await emailjs.sendForm(serviceId, templateId, formRef.current, {
+        publicKey,
+      });
+      setStatus("success");
+      formRef.current.reset();
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setStatus("error");
+    } finally {
+      setIsSending(false);
+    }
+  }
+  
+
+
   return (
     <div className="flex flex-col items-center gap-8">
       <title>Contact</title>
       <h1>
         <i>Feel free to contact!</i>
       </h1>
-      <form className=" bg-white rounded-2xl top-50 right-40 text-secondary p-6 max-w-4x2 ml-12 font‑mono animate-floatUp shadow-lg font-mono font-normal text-sm leading-relaxed">
+      <form ref={formRef} onSubmit={handleSubmit} className=" panel">
         <label htmlFor="text"> Name: </label>
         <input
           type="text"
@@ -13,22 +55,37 @@ export default function ContactPage() {
           name="name"
           placeholder="Your Name"
           className="input"
+          required
         />
-        <label htmlFor="email"> Email: </label>
+        <label htmlFor="reply-to"> Email: </label>
         <input
           type="email"
-          id="name"
+          id="reply-to"
+          name="reply-to"
           placeholder="Your Email"
           className="input"
+          required
         />
         <textarea
           id="message"
+          name = "message"
           placeholder="Your Message: "
           className="input h-32 outline-none w-full"
+          required
         />
-        <button type="submit" id="submit-button">
+        <button type="submit" id="submit-button" disabled={isSending}>
           Submit
         </button>
+        {status === "success" && (
+          <p>
+            Message sent! I&apos;ll get back to you soon.
+          </p>
+        )}
+        {status === "error" && (
+          <p>
+            Something went wrong. Please try again later.
+          </p>
+        )}
       </form>
       <div className="text=base font-normal text-secondary leading-normal">
         <p>Phone: (916)218-0827</p>
