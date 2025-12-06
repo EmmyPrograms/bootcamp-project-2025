@@ -3,10 +3,9 @@
  @author Amelia Harris
  @version 1.0
 */
-
 import mongoose, { Schema } from "mongoose";
 
-type Portfolio = {
+export type Portfolio = {
   title: string;
   description: string;
   image: string;
@@ -19,6 +18,10 @@ const portfolioSchema = new Schema<Portfolio>({
   image: { type: String, required: true },
   imageAlt: { type: String, required: true },
 });
-const Portfolio =
-  mongoose.models["projects"] || mongoose.model("projects", portfolioSchema);
-export default Portfolio;
+
+const PortfolioModel =
+  mongoose.models["projects"] ||
+  mongoose.model<Portfolio>("projects", portfolioSchema);
+
+export default PortfolioModel;
+

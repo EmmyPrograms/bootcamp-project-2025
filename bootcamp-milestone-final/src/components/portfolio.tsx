@@ -6,7 +6,7 @@
 
 import React from "react";
 import Image from "next/image";
-import  Portfolio  from "@/database/portfolioSchema";
+import  type {Portfolio}  from "@/database/portfolioSchema";
 
 export default function PortfolioPreview(props: Portfolio) {
   return (
@@ -14,14 +14,17 @@ export default function PortfolioPreview(props: Portfolio) {
       <h3>
         <u> {props.title} </u>
       </h3>
-      <Image
+      <div className=" mx-auto">
+        <Image
         src={props.image}
         alt={props.imageAlt || "Portfolio Image"}
-        width={300}
-        height={300}
-        className="rounded-3xl animate-floatUp shadow-lg left-0 "
-      ></Image>
-      <p className="bg-white rounded-2xl top-50 right-40 text-secondary p-6 max-w-2xl ml-12 font‑mono animate-floatUp shadow-lg">
+        width={600}
+        height={500}
+        className="rounded-3xl animate-floatUp shadow-lg left-0 w-full h-auto"
+        />
+      </div>
+      
+      <p className="panel">
         {props.description}
       </p>
     </div>

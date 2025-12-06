@@ -5,20 +5,25 @@
 */
 
 import PortfolioPreview from "@/components/portfolio";
-//import { personalProjects } from "@/app/portfolioData";
 import connectDB from "@/database/db";
-import Portfolio from "@/database/portfolioSchema";
+import PortfolioModel, {Portfolio} from "@/database/portfolioSchema";
+import ProjectLoop from "@/components/projectLoop";
 
 async function getPortfolio() {
-  await connectDB(); // function from db.ts before
+  await connectDB();
 
   try {
-    // query for all blogs and sort by date
-    const projects = await Portfolio.find().sort({ date: -1 }).orFail();
-    // send a response as the blogs as the message
-    return projects;
+    const projects = await PortfolioModel.find()
+      .sort({ date: -1 })
+      .lean()
+      .exec();
+    // Strip out Mongo fields like _id, __v so it's safe for Client Components
+    return projects.map((proj: any) => {
+      const { _id, __v, ...rest } = proj;
+      return rest as Portfolio;
+    });
   } catch (err) {
-    return null;
+    return [];
   }
 }
 
@@ -31,19 +36,7 @@ export default async function PortfolioPage() {
         <u>Portfolio</u>
       </h1>
       <div className="gap-10 px-8 py-12 text-secondary">
-        {projects && projects.length > 0 ? (
-          projects.map((project) => (
-            <PortfolioPreview
-              key={project.title}
-              image={project.image}
-              imageAlt={project.imageAlt}
-              title={project.title}
-              description={project.description}
-            />
-          ))
-        ) : (
-          <p>No projects found.</p>
-        )}
+        <ProjectLoop items={projects} />
       </div>
       <footer className="footer">
         © 2025 Amelia Harris | All Rights Reserved
