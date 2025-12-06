@@ -4,41 +4,40 @@
     @version 2.0
 */
 
-import React from "react";
+
 import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 w-full z-10 bg-primary flex justify-between items-center px-6 py-4 text-white font-bold tracking-widest">
+    <header className="sticky top-0 w-full z-50  bg-primary flex justify-between items-center px-6 py-4 text-white font-bold tracking-widest">
       <h2> Amelia's Personal Website </h2>
       <nav className="flex space-x-6 ">
         <Link
-          href="./"
-          className="hover:text-secondary transition-colors duration-200"
+          href="/"
         >
-          Home
+          <div className="hoverSecondary">Home</div>
         </Link>
         <Link
-          href="./blog"
-          className="hover:text-secondary transition-colors duration-200"
+          href="/blog"
+          className="hoverSecondary"
         >
           Blogs
         </Link>
         <Link
-          href="./portfolio"
-          className="hover:text-secondary transition-colors duration-200"
+          href="/portfolio"
+          className="hoverSecondary"
         >
           Portfolio
         </Link>
         <Link
-          href="./resume"
-          className="hover:text-secondary transition-colors duration-200"
+          href="/resume"
+          className="hoverSecondary"
         >
           Resume
         </Link>
         <Link
-          href="./contact"
-          className="hover:text-secondary transition-colors duration-200"
+          href="/contact"
+          className="hoverSecondary"
         >
           Contact Me
         </Link>

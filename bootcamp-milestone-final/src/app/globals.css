@@ -1,5 +1,8 @@
 
+
 @import "tailwindcss";
+
+@custom-variant hover (&:hover);
 
 body {
   background-color: #f5ebd3;
@@ -44,10 +47,32 @@ body {
   }
   .panel {
     @apply bg-white rounded-2xl text-secondary p-6 max-w-2xl ml-12 shadow-lg;
-    top: 12rem; /* if you need specific top/right positioning */
+    top: 12rem;
     right: 10rem;
-    font-family: var(--font-mono); /* use a CSS variable or font-family directly */
-    animation: floatUp 1s ease-out forwards; /* animate separately */
-}
+    font-family: var(--font-mono);
+    animation: floatUp 1s ease-out forwards;
+  }
+  .imageHoverWrapper {
+    @apply relative inline-block;
+  }
+
+  .imageHoverOverlay {
+    @apply absolute inset-0 rounded-3xl pointer-events-none
+      bg-secondary/40 backdrop-blur-sm
+      opacity-0 transition-opacity duration-300;
+  }
+
+  .imageHoverWrapper:hover .imageHoverOverlay {
+    @apply opacity-50;
+  }
+
+  .hoverPrimary {
+    @apply hover:text-primary transition-colors duration-200;
+  }
+  .hoverSecondary {
+    @apply hover:text-secondary transition-colors duration-200;
+  }
+  
+
 }
 

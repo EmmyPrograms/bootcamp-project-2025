@@ -73,7 +73,8 @@ export default function ContactPage() {
           className="input h-32 outline-none w-full"
           required
         />
-        <button type="submit" id="submit-button" disabled={isSending}>
+        <div className="flex flex-col items-center gap-4">
+          <button className = "hoverPrimary" type="submit" id="submit-button" disabled={isSending}>
           Submit
         </button>
         {status === "success" && (
@@ -86,6 +87,8 @@ export default function ContactPage() {
             Something went wrong. Please try again later.
           </p>
         )}
+
+        </div>
       </form>
       <div className="text=base font-normal text-secondary leading-normal">
         <p>Phone: (916)218-0827</p>

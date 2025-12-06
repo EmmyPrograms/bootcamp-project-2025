@@ -106,7 +106,7 @@ export default function CommentSection({
 
           <button
             type="submit"
-            className="px-4 py-2 bg-secondary text-white rounded hover:bg-primary transition"
+            className="px-4 py-2 hover:bg-primary transition bg-secondary text-white rounded "
           >
             Submit
           </button>
