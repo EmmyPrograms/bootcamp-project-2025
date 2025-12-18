@@ -6,7 +6,7 @@
 
 
 
-import connectDB from "@/database/db";
+import { headers } from "next/headers";
 import BlogPage from "@/components/blog";
 
 
@@ -16,7 +16,11 @@ type Props = {
 
 async function getBlog(slug: string) {
   try {
-    const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
+      const h = await headers();
+      const host = h.get("host");          // auto-detect host
+      const protocol = process.env.NODE_ENV === "development" ? "http" : "https";
+      const baseUrl = `${protocol}://${host}`;
+    const res = await fetch(`${baseUrl}/api/blog/${slug}`, {
       cache: "no-store",
     });
 
